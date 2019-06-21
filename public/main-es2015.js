@@ -74,7 +74,7 @@ module.exports = "<div>\n  <h1>Editar curso</h1>\n</div>\n<form class=\"example-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div><h1>Cursos cadastrados</h1></div>\n<button color=\"accent\" routerLink=\"/course/create\" selected>Cadastrar</button>\n<table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n\n  <ng-container matColumnDef = \"id\">\n    <th mat-headder-cell *matHeaderCellDef>ID</th>\n    <td mat-cell *matCellDef = \"let row\">{{row.id}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef = \"name\">\n    <th mat-header-cell *matHeaderCellDef>Nome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.name}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef =\"city\">\n    <th mat-header-cell *matHeaderCellDef>Cidade</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.city}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef =\"period\">\n    <th mat-header-cell *matHeaderCellDef>Periodo</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.period}}</td>\n  </ng-container>\n\n      <ng-container matColumnDef=\"teacher\">\n        <th mat-header-cell *matHeaderCellDef> Professores </th>\n        <td mat-cell *matCellDef=\"let row\">\n            <mat-list-item *ngFor=\"let prof of row.teacher\" >{{prof.name}}</mat-list-item>\n        </td>\n      </ng-container>\n\n  <ng-container matColumnDef=\"action\">\n    <th mat-header-cell *matHeaderCellDef>  </th>\n    <td mat-cell *matCellDef=\"let row\"> <button mat-flat-button color=\"accent\" routerLink=\"/course/{{row.id}}\" selected>Detalhe</button></td>\n  </ng-container>\n\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n"
+module.exports = "<div><h1>Cursos cadastrados</h1></div>\n<button color=\"accent\" routerLink=\"/course/create\" selected>Cadastrar</button>\n<div class=\"mat-elevation-z8\">\n<table mat-table [dataSource]=\"dataSource\" >\n\n  <ng-container matColumnDef = \"id\">\n    <th mat-headder-cell *matHeaderCellDef>ID</th>\n    <td mat-cell *matCellDef = \"let row\">{{row.id}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef = \"name\">\n    <th mat-header-cell *matHeaderCellDef>Nome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.name}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef =\"city\">\n    <th mat-header-cell *matHeaderCellDef>Cidade</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.city}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef =\"period\">\n    <th mat-header-cell *matHeaderCellDef>Periodo</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.period}}</td>\n  </ng-container>\n\n      <ng-container matColumnDef=\"teacher\">\n        <th mat-header-cell *matHeaderCellDef> Professores </th>\n        <td mat-cell *matCellDef=\"let row\">\n            <mat-list-item *ngFor=\"let prof of row.teacher\" >{{prof.name}}</mat-list-item>\n        </td>\n      </ng-container>\n\n  <ng-container matColumnDef=\"action\">\n    <th mat-header-cell *matHeaderCellDef>  </th>\n    <td mat-cell *matCellDef=\"let row\"> <button mat-flat-button color=\"accent\" routerLink=\"/course/{{row.id}}\" selected>Detalhe</button></td>\n  </ng-container>\n\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n<mat-paginator [pageSizeOptions]=\"[1,5, 10, 20]\" showFirstLastButtons></mat-paginator>\n</div>\n"
 
 /***/ }),
 
@@ -129,7 +129,7 @@ module.exports = "<div>\n    <h3>Editar estudante</h3>\n  </div>\n  <form class=
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div><h1>Estudantes cadastrados</h1></div>\n<button color=\"accent\" routerLink=\"/student/create\" selected>Cadastrar</button>\n<table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n\n  <ng-container matColumnDef=\"id\">\n    <th mat-header-cell *matHeaderCellDef> ID </th>\n    <td mat-cell *matCellDef=\"let row\"> {{row.id}} </td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"name\">\n    <th mat-header-cell *matHeaderCellDef> Nome </th>\n    <td mat-cell *matCellDef=\"let row\"> {{row.name}} </td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"lastname\">\n    <th mat-header-cell *matHeaderCellDef> Sobrenome </th>\n    <td mat-cell *matCellDef=\"let row\"> {{row.lastname}} </td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"age\">\n    <th mat-header-cell *matHeaderCellDef> Idade </th>\n    <td mat-cell *matCellDef=\"let row\"> {{row.age}} </td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"course\">\n      <th mat-header-cell *matHeaderCellDef> Curso </th>\n      <td mat-cell *matCellDef=\"let row\"> {{row.course[0].name}} </td>\n    </ng-container>\n\n  <ng-container matColumnDef=\"action\">\n      <th mat-header-cell *matHeaderCellDef>  </th>\n      <td mat-cell *matCellDef=\"let row\"> <button mat-flat-button color=\"accent\" routerLink=\"/student/{{row.id}}\" selected>Detalhes</button></td>\n    </ng-container>\n\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>"
+module.exports = "<div><h1>Estudantes cadastrados</h1></div>\n<button color=\"accent\" routerLink=\"/student/create\" selected>Cadastrar</button>\n<div class=\"mat-elevation-z8\">\n<table mat-table [dataSource]=\"dataSource\" >\n\n  <ng-container matColumnDef=\"id\">\n    <th mat-header-cell *matHeaderCellDef> ID </th>\n    <td mat-cell *matCellDef=\"let row\"> {{row.id}} </td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"name\">\n    <th mat-header-cell *matHeaderCellDef> Nome </th>\n    <td mat-cell *matCellDef=\"let row\"> {{row.name}} </td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"lastname\">\n    <th mat-header-cell *matHeaderCellDef> Sobrenome </th>\n    <td mat-cell *matCellDef=\"let row\"> {{row.lastname}} </td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"age\">\n    <th mat-header-cell *matHeaderCellDef> Idade </th>\n    <td mat-cell *matCellDef=\"let row\"> {{row.age}} </td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"course\">\n      <th mat-header-cell *matHeaderCellDef> Curso </th>\n      <td mat-cell *matCellDef=\"let row\"> {{row.course[0].name}} </td>\n    </ng-container>\n\n  <ng-container matColumnDef=\"action\">\n      <th mat-header-cell *matHeaderCellDef>  </th>\n      <td mat-cell *matCellDef=\"let row\"> <button mat-flat-button color=\"accent\" routerLink=\"/student/{{row.id}}\" selected>Detalhes</button></td>\n    </ng-container>\n\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n<mat-paginator [pageSizeOptions]=\"[1,5, 10, 20]\" showFirstLastButtons></mat-paginator>\n</div>"
 
 /***/ }),
 
@@ -173,7 +173,7 @@ module.exports = "<div>\n  <h3>Editar professor</h3>\n</div>\n<form class=\"exam
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div><h1>Professores cadastrados</h1></div>\n<button color=\"accent\" routerLink=\"/teacher/create\" selected>Cadastrar</button>\n<table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n\n  <ng-container matColumnDef = \"id\">\n    <th mat-headder-cell *matHeaderCellDef>ID</th>\n    <td mat-cell *matCellDef = \"let row\">{{row.id}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef = \"name\">\n    <th mat-header-cell *matHeaderCellDef>Nome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.name}}</td>\n  </ng-container>\n  \n  <ng-container matColumnDef =\"lastname\">\n    <th mat-header-cell *matHeaderCellDef>Sobrenome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.lastname}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef =\"profile\">\n    <th mat-header-cell *matHeaderCellDef>PHD</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.phd}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"action\">\n    <th mat-header-cell *matHeaderCellDef>  </th>\n    <td mat-cell *matCellDef=\"let row\"> <button mat-flat-button color=\"accent\" routerLink=\"/teacher/{{row.id}}\" selected>Detalhe</button></td>\n  </ng-container>\n\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n"
+module.exports = "<div><h1>Professores cadastrados</h1></div>\n<button color=\"accent\" routerLink=\"/teacher/create\" selected>Cadastrar</button>\n<div class=\"mat-elevation-z8\">\n<table mat-table [dataSource]=\"dataSource\">\n\n  <ng-container matColumnDef = \"id\">\n    <th mat-headder-cell *matHeaderCellDef>ID</th>\n    <td mat-cell *matCellDef = \"let row\">{{row.id}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef = \"name\">\n    <th mat-header-cell *matHeaderCellDef>Nome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.name}}</td>\n  </ng-container>\n  \n  <ng-container matColumnDef =\"lastname\">\n    <th mat-header-cell *matHeaderCellDef>Sobrenome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.lastname}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef =\"profile\">\n    <th mat-header-cell *matHeaderCellDef>PHD</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.phd}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"action\">\n    <th mat-header-cell *matHeaderCellDef>  </th>\n    <td mat-cell *matCellDef=\"let row\"> <button mat-flat-button color=\"accent\" routerLink=\"/teacher/{{row.id}}\" selected>Detalhe</button></td>\n  </ng-container>\n\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n<mat-paginator [pageSizeOptions]=\"[1,5, 10, 20]\" showFirstLastButtons></mat-paginator>\n</div>\n"
 
 /***/ }),
 
@@ -228,7 +228,7 @@ module.exports = "<div>\n  <h3>Editar usuário</h3>\n</div>\n<form class=\"examp
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div><h1>Usuários cadastrados</h1></div>\n<button color=\"accent\" routerLink=\"/user/create\" selected>Cadastrar</button>\n<table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n\n  <ng-container matColumnDef = \"id\">\n    <th mat-headder-cell *matHeaderCellDef>ID</th>\n    <td mat-cell *matCellDef = \"let row\">{{row.id}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef = \"name\">\n    <th mat-header-cell *matHeaderCellDef>Nome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.name}}</td>\n  </ng-container>\n  <ng-container matColumnDef =\"lastname\">\n    <th mat-header-cell *matHeaderCellDef>Sobrenome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.lastname}}</td>\n  </ng-container>\n  <ng-container matColumnDef =\"profile\">\n    <th mat-header-cell *matHeaderCellDef>Perfil</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.profile}}</td>\n  </ng-container>\n  <ng-container matColumnDef=\"action\">\n    <th mat-header-cell *matHeaderCellDef>  </th>\n    <td mat-cell *matCellDef=\"let row\"> <button mat-flat-button color=\"accent\" routerLink=\"/user/{{row.id}}\" selected>Detalhe</button></td>\n  </ng-container>\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n\n"
+module.exports = "<div><h1>Usuários cadastrados</h1></div>\n<button color=\"accent\" routerLink=\"/user/create\" selected>Cadastrar</button>\n<div class=\"mat-elevation-z8\">\n<table mat-table [dataSource]=\"dataSource\">\n\n  <ng-container matColumnDef = \"id\">\n    <th mat-headder-cell *matHeaderCellDef>ID</th>\n    <td mat-cell *matCellDef = \"let row\">{{row.id}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef = \"name\">\n    <th mat-header-cell *matHeaderCellDef>Nome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.name}}</td>\n  </ng-container>\n  <ng-container matColumnDef =\"lastname\">\n    <th mat-header-cell *matHeaderCellDef>Sobrenome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.lastname}}</td>\n  </ng-container>\n  <ng-container matColumnDef =\"profile\">\n    <th mat-header-cell *matHeaderCellDef>Perfil</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.profile}}</td>\n  </ng-container>\n  <ng-container matColumnDef=\"action\">\n    <th mat-header-cell *matHeaderCellDef>  </th>\n    <td mat-cell *matCellDef=\"let row\"> <button mat-flat-button color=\"accent\" routerLink=\"/user/{{row.id}}\" selected>Detalhe</button></td>\n  </ng-container>\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n<mat-paginator [pageSizeOptions]=\"[1,5, 10, 20]\" showFirstLastButtons></mat-paginator>\n</div>\n\n"
 
 /***/ }),
 
@@ -473,7 +473,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSidenavModule"],
             _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableModule"],
             _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatToolbarModule"],
-            _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_10__["LayoutModule"]
+            _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_10__["LayoutModule"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatPaginatorModule"]
         ],
         providers: [],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
@@ -803,6 +804,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../service.service */ "./src/app/service.service.ts");
+/* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/paginator */ "./node_modules/@angular/material/esm2015/paginator.js");
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/esm2015/table.js");
+
+
 
 
 
@@ -815,7 +820,8 @@ let CourseComponent = class CourseComponent {
     ngOnInit() {
         this.api.getAllCourse()
             .subscribe(res => {
-            this.dataSource = res;
+            this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"](res);
+            this.dataSource.paginator = this.paginator;
             console.log(this.dataSource);
             this.isLoadingResults = false;
         }, err => {
@@ -824,6 +830,10 @@ let CourseComponent = class CourseComponent {
         });
     }
 };
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__["MatPaginator"], { static: true }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__["MatPaginator"])
+], CourseComponent.prototype, "paginator", void 0);
 CourseComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-course',
@@ -1322,6 +1332,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../service.service */ "./src/app/service.service.ts");
+/* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/paginator */ "./node_modules/@angular/material/esm2015/paginator.js");
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/esm2015/table.js");
+
+
 
 
 
@@ -1334,7 +1348,8 @@ let StudentComponent = class StudentComponent {
     ngOnInit() {
         this.api.getAllStudent()
             .subscribe(res => {
-            this.dataSource = res;
+            this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"](res);
+            this.dataSource.paginator = this.paginator;
             console.log(this.dataSource);
             this.isLoadingResults = false;
         }, err => {
@@ -1343,6 +1358,10 @@ let StudentComponent = class StudentComponent {
         });
     }
 };
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__["MatPaginator"], { static: true }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__["MatPaginator"])
+], StudentComponent.prototype, "paginator", void 0);
 StudentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-student',
@@ -1626,6 +1645,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../service.service */ "./src/app/service.service.ts");
+/* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/paginator */ "./node_modules/@angular/material/esm2015/paginator.js");
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/esm2015/table.js");
+
+
 
 
 
@@ -1638,7 +1661,8 @@ let TeacherComponent = class TeacherComponent {
     ngOnInit() {
         this.api.getAllTeachers()
             .subscribe(res => {
-            this.dataSource = res;
+            this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"](res);
+            this.dataSource.paginator = this.paginator;
             console.log(this.dataSource);
             this.isLoadingResults = false;
         }, err => {
@@ -1647,6 +1671,10 @@ let TeacherComponent = class TeacherComponent {
         });
     }
 };
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__["MatPaginator"], { static: true }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__["MatPaginator"])
+], TeacherComponent.prototype, "paginator", void 0);
 TeacherComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-teacher',
@@ -1987,6 +2015,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service.service */ "./src/app/service.service.ts");
+/* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/paginator */ "./node_modules/@angular/material/esm2015/paginator.js");
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/esm2015/table.js");
+
+
 
 
 
@@ -1999,7 +2031,8 @@ let UserComponent = class UserComponent {
     ngOnInit() {
         this.api.getAllUsers()
             .subscribe(res => {
-            this.dataSource = res;
+            this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"](res);
+            this.dataSource.paginator = this.paginator;
             console.log(this.dataSource);
             this.isLoadingResults = false;
         }, err => {
@@ -2008,6 +2041,10 @@ let UserComponent = class UserComponent {
         });
     }
 };
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__["MatPaginator"], { static: true }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__["MatPaginator"])
+], UserComponent.prototype, "paginator", void 0);
 UserComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-user',
