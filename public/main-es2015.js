@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n  <h1>\n     {{ title }}\n  </h1>\n<nav>\n  <a routerLink=\"/user\">Usuário</a>\n <a routerLink=\"/teacher\"><br>Professor</a>\n  <a routerLink=\"/course\"><br>Curso</a>\n <a routerLink=\"/student\"><br>Estudante</a>\n</nav>\n<!-- <div class=\"container\">\n  <app-menu></app-menu>\n</div> -->\n  <router-outlet></router-outlet>\n\n\n\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n  <h1>\n     {{ title }}\n  </h1>\n<nav>\n  <button mat-raised-button color=\"primary\" routerLink=\"/user\">Usuário</button>\n <button mat-raised-button color=\"primary\" routerLink=\"/teacher\" >Professor</button>\n  <button mat-raised-button color=\"primary\" routerLink=\"/course\" >Curso</button>\n <button  mat-raised-button color=\"primary\" routerLink=\"/student\" >Estudante</button>\n</nav>\n<!-- <div class=\"container\">\n  <app-menu></app-menu>\n</div> -->\n  <router-outlet></router-outlet>\n\n\n\n"
 
 /***/ }),
 
@@ -74,7 +74,7 @@ module.exports = "<div>\n  <h1>Editar curso</h1>\n</div>\n<form class=\"example-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div><h1>Cursos cadastrados</h1></div>\n<button color=\"accent\" routerLink=\"/course/create\" selected>Cadastrar</button>\n<div class=\"mat-elevation-z8\">\n<table mat-table [dataSource]=\"dataSource\" >\n\n  <ng-container matColumnDef = \"id\">\n    <th mat-headder-cell *matHeaderCellDef>ID</th>\n    <td mat-cell *matCellDef = \"let row\">{{row.id}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef = \"name\">\n    <th mat-header-cell *matHeaderCellDef>Nome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.name}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef =\"city\">\n    <th mat-header-cell *matHeaderCellDef>Cidade</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.city}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef =\"period\">\n    <th mat-header-cell *matHeaderCellDef>Periodo</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.period}}</td>\n  </ng-container>\n\n      <ng-container matColumnDef=\"teacher\">\n        <th mat-header-cell *matHeaderCellDef> Professores </th>\n        <td mat-cell *matCellDef=\"let row\">\n            <mat-list-item *ngFor=\"let prof of row.teacher\" >{{prof.name}}</mat-list-item>\n        </td>\n      </ng-container>\n\n  <ng-container matColumnDef=\"action\">\n    <th mat-header-cell *matHeaderCellDef>  </th>\n    <td mat-cell *matCellDef=\"let row\"> <button mat-flat-button color=\"accent\" routerLink=\"/course/{{row.id}}\" selected>Detalhe</button></td>\n  </ng-container>\n\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n<mat-paginator [pageSizeOptions]=\"[1,5, 10, 20]\" showFirstLastButtons></mat-paginator>\n</div>\n"
+module.exports = "<div><h1>Cursos cadastrados</h1></div>\n<button mat-raised-button color=\"warn\" routerLink=\"/course/create\" selected>Cadastrar</button>\n\n<div class=\"mat-elevation-z8\">\n\n    <mat-form-field>\n        <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Pesquisa\">\n      </mat-form-field>\n\n<table mat-table [dataSource]=\"dataSource\" >\n\n  <ng-container matColumnDef = \"id\">\n    <th mat-headder-cell *matHeaderCellDef>ID</th>\n    <td mat-cell *matCellDef = \"let row\">{{row.id}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef = \"name\">\n    <th mat-header-cell *matHeaderCellDef>Nome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.name}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef =\"city\">\n    <th mat-header-cell *matHeaderCellDef>Cidade</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.city}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef =\"period\">\n    <th mat-header-cell *matHeaderCellDef>Periodo</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.period}}</td>\n  </ng-container>\n\n      <ng-container matColumnDef=\"teacher\">\n        <th mat-header-cell *matHeaderCellDef> Professores </th>\n        <td mat-cell *matCellDef=\"let row\">\n            <mat-list-item *ngFor=\"let prof of row.teacher\" >{{prof.name}}</mat-list-item>\n        </td>\n      </ng-container>\n\n  <ng-container matColumnDef=\"action\">\n    <th mat-header-cell *matHeaderCellDef>  </th>\n    <td mat-cell *matCellDef=\"let row\"> <button mat-flat-button color=\"accent\" routerLink=\"/course/{{row.id}}\" selected>Detalhe</button></td>\n  </ng-container>\n\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n<mat-paginator [pageSizeOptions]=\"[5, 10, 20]\" showFirstLastButtons></mat-paginator>\n</div>\n"
 
 /***/ }),
 
@@ -129,7 +129,7 @@ module.exports = "<div>\n    <h3>Editar estudante</h3>\n  </div>\n  <form class=
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div><h1>Estudantes cadastrados</h1></div>\n<button color=\"accent\" routerLink=\"/student/create\" selected>Cadastrar</button>\n<div class=\"mat-elevation-z8\">\n<table mat-table [dataSource]=\"dataSource\" >\n\n  <ng-container matColumnDef=\"id\">\n    <th mat-header-cell *matHeaderCellDef> ID </th>\n    <td mat-cell *matCellDef=\"let row\"> {{row.id}} </td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"name\">\n    <th mat-header-cell *matHeaderCellDef> Nome </th>\n    <td mat-cell *matCellDef=\"let row\"> {{row.name}} </td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"lastname\">\n    <th mat-header-cell *matHeaderCellDef> Sobrenome </th>\n    <td mat-cell *matCellDef=\"let row\"> {{row.lastname}} </td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"age\">\n    <th mat-header-cell *matHeaderCellDef> Idade </th>\n    <td mat-cell *matCellDef=\"let row\"> {{row.age}} </td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"course\">\n      <th mat-header-cell *matHeaderCellDef> Curso </th>\n      <td mat-cell *matCellDef=\"let row\"> {{row.course[0].name}} </td>\n    </ng-container>\n\n  <ng-container matColumnDef=\"action\">\n      <th mat-header-cell *matHeaderCellDef>  </th>\n      <td mat-cell *matCellDef=\"let row\"> <button mat-flat-button color=\"accent\" routerLink=\"/student/{{row.id}}\" selected>Detalhes</button></td>\n    </ng-container>\n\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n<mat-paginator [pageSizeOptions]=\"[1,5, 10, 20]\" showFirstLastButtons></mat-paginator>\n</div>"
+module.exports = "<div><h1>Estudantes cadastrados</h1></div>\n<button mat-raised-button color=\"warn\" routerLink=\"/student/create\" selected>Cadastrar</button>\n\n<div class=\"mat-elevation-z8\">\n\n    <mat-form-field>\n        <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Pesquisa\">\n      </mat-form-field>\n\n<table mat-table [dataSource]=\"dataSource\" >\n\n  <ng-container matColumnDef=\"id\">\n    <th mat-header-cell *matHeaderCellDef> ID </th>\n    <td mat-cell *matCellDef=\"let row\"> {{row.id}} </td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"name\">\n    <th mat-header-cell *matHeaderCellDef> Nome </th>\n    <td mat-cell *matCellDef=\"let row\"> {{row.name}} </td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"lastname\">\n    <th mat-header-cell *matHeaderCellDef> Sobrenome </th>\n    <td mat-cell *matCellDef=\"let row\"> {{row.lastname}} </td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"age\">\n    <th mat-header-cell *matHeaderCellDef> Idade </th>\n    <td mat-cell *matCellDef=\"let row\"> {{row.age}} </td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"course\">\n      <th mat-header-cell *matHeaderCellDef> Curso </th>\n      <td mat-cell *matCellDef=\"let row\"> {{row.course[0].name}} </td>\n    </ng-container>\n\n  <ng-container matColumnDef=\"action\">\n      <th mat-header-cell *matHeaderCellDef>  </th>\n      <td mat-cell *matCellDef=\"let row\"> <button mat-flat-button color=\"accent\" routerLink=\"/student/{{row.id}}\" selected>Detalhes</button></td>\n    </ng-container>\n\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n<mat-paginator [pageSizeOptions]=\"[5, 10, 20]\" showFirstLastButtons></mat-paginator>\n</div>"
 
 /***/ }),
 
@@ -173,7 +173,7 @@ module.exports = "<div>\n  <h3>Editar professor</h3>\n</div>\n<form class=\"exam
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div><h1>Professores cadastrados</h1></div>\n<button color=\"accent\" routerLink=\"/teacher/create\" selected>Cadastrar</button>\n<div class=\"mat-elevation-z8\">\n<table mat-table [dataSource]=\"dataSource\">\n\n  <ng-container matColumnDef = \"id\">\n    <th mat-headder-cell *matHeaderCellDef>ID</th>\n    <td mat-cell *matCellDef = \"let row\">{{row.id}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef = \"name\">\n    <th mat-header-cell *matHeaderCellDef>Nome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.name}}</td>\n  </ng-container>\n  \n  <ng-container matColumnDef =\"lastname\">\n    <th mat-header-cell *matHeaderCellDef>Sobrenome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.lastname}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef =\"profile\">\n    <th mat-header-cell *matHeaderCellDef>PHD</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.phd}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"action\">\n    <th mat-header-cell *matHeaderCellDef>  </th>\n    <td mat-cell *matCellDef=\"let row\"> <button mat-flat-button color=\"accent\" routerLink=\"/teacher/{{row.id}}\" selected>Detalhe</button></td>\n  </ng-container>\n\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n<mat-paginator [pageSizeOptions]=\"[1,5, 10, 20]\" showFirstLastButtons></mat-paginator>\n</div>\n"
+module.exports = "<div><h1>Professores cadastrados</h1></div>\n<button mat-raised-button color=\"warn\" routerLink=\"/teacher/create\" selected>Cadastrar</button>\n\n<div class=\"mat-elevation-z8\">\n    <mat-form-field>\n        <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Pesquisa\">\n      </mat-form-field>\n\n<table mat-table [dataSource]=\"dataSource\">\n\n  <ng-container matColumnDef = \"id\">\n    <th mat-headder-cell *matHeaderCellDef>ID</th>\n    <td mat-cell *matCellDef = \"let row\">{{row.id}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef = \"name\">\n    <th mat-header-cell *matHeaderCellDef>Nome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.name}}</td>\n  </ng-container>\n  \n  <ng-container matColumnDef =\"lastname\">\n    <th mat-header-cell *matHeaderCellDef>Sobrenome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.lastname}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef =\"profile\">\n    <th mat-header-cell *matHeaderCellDef>PHD</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.phd}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef=\"action\">\n    <th mat-header-cell *matHeaderCellDef>  </th>\n    <td mat-cell *matCellDef=\"let row\"> <button mat-flat-button color=\"accent\" routerLink=\"/teacher/{{row.id}}\" selected>Detalhe</button></td>\n  </ng-container>\n\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n<mat-paginator [pageSizeOptions]=\"[5, 10, 20]\" showFirstLastButtons></mat-paginator>\n</div>\n"
 
 /***/ }),
 
@@ -228,7 +228,7 @@ module.exports = "<div>\n  <h3>Editar usuário</h3>\n</div>\n<form class=\"examp
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div><h1>Usuários cadastrados</h1></div>\n<button color=\"accent\" routerLink=\"/user/create\" selected>Cadastrar</button>\n<div class=\"mat-elevation-z8\">\n<table mat-table [dataSource]=\"dataSource\">\n\n  <ng-container matColumnDef = \"id\">\n    <th mat-headder-cell *matHeaderCellDef>ID</th>\n    <td mat-cell *matCellDef = \"let row\">{{row.id}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef = \"name\">\n    <th mat-header-cell *matHeaderCellDef>Nome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.name}}</td>\n  </ng-container>\n  <ng-container matColumnDef =\"lastname\">\n    <th mat-header-cell *matHeaderCellDef>Sobrenome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.lastname}}</td>\n  </ng-container>\n  <ng-container matColumnDef =\"profile\">\n    <th mat-header-cell *matHeaderCellDef>Perfil</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.profile}}</td>\n  </ng-container>\n  <ng-container matColumnDef=\"action\">\n    <th mat-header-cell *matHeaderCellDef>  </th>\n    <td mat-cell *matCellDef=\"let row\"> <button mat-flat-button color=\"accent\" routerLink=\"/user/{{row.id}}\" selected>Detalhe</button></td>\n  </ng-container>\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n<mat-paginator [pageSizeOptions]=\"[1,5, 10, 20]\" showFirstLastButtons></mat-paginator>\n</div>\n\n"
+module.exports = "<div><h1>Usuários cadastrados</h1></div>\n<button mat-raised-button color=\"warn\" routerLink=\"/user/create\" selected>Cadastrar</button>\n\n<div class=\"mat-elevation-z8\">\n    <mat-form-field>\n        <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Pesquisa\">\n      </mat-form-field>\n    \n<table mat-table [dataSource]=\"dataSource\">\n\n  <ng-container matColumnDef = \"id\">\n    <th mat-headder-cell *matHeaderCellDef>ID</th>\n    <td mat-cell *matCellDef = \"let row\">{{row.id}}</td>\n  </ng-container>\n\n  <ng-container matColumnDef = \"name\">\n    <th mat-header-cell *matHeaderCellDef>Nome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.name}}</td>\n  </ng-container>\n  <ng-container matColumnDef =\"lastname\">\n    <th mat-header-cell *matHeaderCellDef>Sobrenome</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.lastname}}</td>\n  </ng-container>\n  <ng-container matColumnDef =\"profile\">\n    <th mat-header-cell *matHeaderCellDef>Perfil</th>\n    <td mat-cell *matCellDef=\"let row\">{{row.profile}}</td>\n  </ng-container>\n  <ng-container matColumnDef=\"action\">\n    <th mat-header-cell *matHeaderCellDef>  </th>\n    <td mat-cell *matCellDef=\"let row\"> <button mat-flat-button color=\"accent\" routerLink=\"/user/{{row.id}}\" selected>Detalhe</button></td>\n  </ng-container>\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n<mat-paginator [pageSizeOptions]=\"[5, 10, 20]\" showFirstLastButtons></mat-paginator>\n</div>\n\n"
 
 /***/ }),
 
@@ -326,7 +326,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "button{\n    margin: 20px;\n    width: 20%\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0lBQ1o7QUFDSiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiYnV0dG9ue1xuICAgIG1hcmdpbjogMjBweDtcbiAgICB3aWR0aDogMjAlXG59XG5cbiJdfQ== */"
 
 /***/ }),
 
@@ -787,7 +787,7 @@ CoursePutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\ntable{\n    width: 90%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY291cnNlL2NvdXJzZS9jb3Vyc2UuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0E7SUFDSSxVQUFVO0FBQ2QiLCJmaWxlIjoic3JjL2FwcC9jb3Vyc2UvY291cnNlL2NvdXJzZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG50YWJsZXtcbiAgICB3aWR0aDogOTAlO1xufSJdfQ== */"
+module.exports = ".mat-form-field {\n    font-size: 25px;\n    width: 100%;\n  }\n\n  button{\n      margin: 20px;\n      width: 30%;\n  }\n\n  th{\n    color:white;\n    background-color: green;\n    font-size: 20px;\n  }\n\n  td{\n      font-size: 20px;\n      color:black;\n       background-color:#79FF84;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY291cnNlL2NvdXJzZS9jb3Vyc2UuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGVBQWU7SUFDZixXQUFXO0VBQ2I7O0VBRUE7TUFDSSxZQUFZO01BQ1osVUFBVTtFQUNkOztFQUVBO0lBQ0UsV0FBVztJQUNYLHVCQUF1QjtJQUN2QixlQUFlO0VBQ2pCOztFQUVBO01BQ0ksZUFBZTtNQUNmLFdBQVc7T0FDVix3QkFBd0I7RUFDN0IiLCJmaWxlIjoic3JjL2FwcC9jb3Vyc2UvY291cnNlL2NvdXJzZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hdC1mb3JtLWZpZWxkIHtcbiAgICBmb250LXNpemU6IDI1cHg7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cblxuICBidXR0b257XG4gICAgICBtYXJnaW46IDIwcHg7XG4gICAgICB3aWR0aDogMzAlO1xuICB9XG5cbiAgdGh7XG4gICAgY29sb3I6d2hpdGU7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JlZW47XG4gICAgZm9udC1zaXplOiAyMHB4O1xuICB9XG5cbiAgdGR7XG4gICAgICBmb250LXNpemU6IDIwcHg7XG4gICAgICBjb2xvcjpibGFjaztcbiAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiM3OUZGODQ7XG4gIH0iXX0= */"
 
 /***/ }),
 
@@ -828,6 +828,36 @@ let CourseComponent = class CourseComponent {
             console.log(err);
             this.isLoadingResults = false;
         });
+    }
+    applyFilter(filterValue) {
+        this.dataSource.filterPredicate = (data, filter) => {
+            const accumulator = (currentTerm, key) => {
+                return this.nestedFilterCheck(currentTerm, data, key);
+            };
+            const dataStr = Object.keys(data).reduce(accumulator, '').toLowerCase();
+            // Transform the filter by converting it to lowercase and removing whitespace.
+            const transformedFilter = filter.trim().toLowerCase();
+            return dataStr.indexOf(transformedFilter) !== -1;
+        };
+        this.dataSource.filter = filterValue.trim().toLowerCase();
+    }
+    nestedFilterCheck(search, data, key) {
+        if (typeof data[key] === 'object') {
+            for (let aux = 0; aux < data[key].length; aux++) {
+                for (const k in data[key][aux]) {
+                    if (k == 'name') {
+                        console.log(k);
+                        if (data[key][k] !== null) {
+                            search = this.nestedFilterCheck(search, data[key][aux], k);
+                        }
+                    }
+                }
+            }
+        }
+        else {
+            search += data[key];
+        }
+        return search;
     }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1315,7 +1345,7 @@ StudentPutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\ntable{\n    width: 90%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc3R1ZGVudC9zdHVkZW50L3N0dWRlbnQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0E7SUFDSSxVQUFVO0FBQ2QiLCJmaWxlIjoic3JjL2FwcC9zdHVkZW50L3N0dWRlbnQvc3R1ZGVudC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG50YWJsZXtcbiAgICB3aWR0aDogOTAlO1xufSJdfQ== */"
+module.exports = ".mat-form-field {\n    font-size: 25px;\n    width: 100%;\n  }\n\n  button{\n      margin: 20px;\n      width: 30%;\n  }\n\n  th{\n    color:white;\n    background-color: green;\n    font-size: 20px;\n  }\n\n  td{\n    font-size: 20px;\n    color:black;\n     background-color:#79FF84;\n}   \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc3R1ZGVudC9zdHVkZW50L3N0dWRlbnQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGVBQWU7SUFDZixXQUFXO0VBQ2I7O0VBRUE7TUFDSSxZQUFZO01BQ1osVUFBVTtFQUNkOztFQUVBO0lBQ0UsV0FBVztJQUNYLHVCQUF1QjtJQUN2QixlQUFlO0VBQ2pCOztFQUVBO0lBQ0UsZUFBZTtJQUNmLFdBQVc7S0FDVix3QkFBd0I7QUFDN0IiLCJmaWxlIjoic3JjL2FwcC9zdHVkZW50L3N0dWRlbnQvc3R1ZGVudC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hdC1mb3JtLWZpZWxkIHtcbiAgICBmb250LXNpemU6IDI1cHg7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cblxuICBidXR0b257XG4gICAgICBtYXJnaW46IDIwcHg7XG4gICAgICB3aWR0aDogMzAlO1xuICB9XG5cbiAgdGh7XG4gICAgY29sb3I6d2hpdGU7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JlZW47XG4gICAgZm9udC1zaXplOiAyMHB4O1xuICB9XG5cbiAgdGR7XG4gICAgZm9udC1zaXplOiAyMHB4O1xuICAgIGNvbG9yOmJsYWNrO1xuICAgICBiYWNrZ3JvdW5kLWNvbG9yOiM3OUZGODQ7XG59ICAgIl19 */"
 
 /***/ }),
 
@@ -1356,6 +1386,34 @@ let StudentComponent = class StudentComponent {
             console.log(err);
             this.isLoadingResults = false;
         });
+    }
+    applyFilter(filterValue) {
+        this.dataSource.filterPredicate = (data, filter) => {
+            const accumulator = (currentTerm, key) => {
+                return this.nestedFilterCheck(currentTerm, data, key);
+            };
+            const dataStr = Object.keys(data).reduce(accumulator, '').toLowerCase();
+            // Transform the filter by converting it to lowercase and removing whitespace.
+            const transformedFilter = filter.trim().toLowerCase();
+            return dataStr.indexOf(transformedFilter) !== -1;
+        };
+        this.dataSource.filter = filterValue.trim().toLowerCase();
+    }
+    nestedFilterCheck(search, data, key) {
+        if (typeof data[key] === 'object') {
+            for (const k in data[key][0]) {
+                if (k == 'name') {
+                    console.log(k);
+                    if (data[key][k] !== null) {
+                        search = this.nestedFilterCheck(search, data[key][0], k);
+                    }
+                }
+            }
+        }
+        else {
+            search += data[key];
+        }
+        return search;
     }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1628,7 +1686,7 @@ class Teacher {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\ntable{\n    width: 90%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGVhY2hlci90ZWFjaGVyL3RlYWNoZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0E7SUFDSSxVQUFVO0FBQ2QiLCJmaWxlIjoic3JjL2FwcC90ZWFjaGVyL3RlYWNoZXIvdGVhY2hlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG50YWJsZXtcbiAgICB3aWR0aDogOTAlO1xufSJdfQ== */"
+module.exports = ".mat-form-field {\n    font-size: 25px;\n    width: 100%;\n  }\n\n  button{\n      margin: 20px;\n      width: 30%;\n  }\n\n  th{\n    color:white;\n    background-color: green;\n    font-size: 20px;\n  }\n\n  td{\n    font-size: 20px;\n    color:black;\n     background-color:#79FF84;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGVhY2hlci90ZWFjaGVyL3RlYWNoZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGVBQWU7SUFDZixXQUFXO0VBQ2I7O0VBRUE7TUFDSSxZQUFZO01BQ1osVUFBVTtFQUNkOztFQUVBO0lBQ0UsV0FBVztJQUNYLHVCQUF1QjtJQUN2QixlQUFlO0VBQ2pCOztFQUVBO0lBQ0UsZUFBZTtJQUNmLFdBQVc7S0FDVix3QkFBd0I7QUFDN0IiLCJmaWxlIjoic3JjL2FwcC90ZWFjaGVyL3RlYWNoZXIvdGVhY2hlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hdC1mb3JtLWZpZWxkIHtcbiAgICBmb250LXNpemU6IDI1cHg7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cblxuICBidXR0b257XG4gICAgICBtYXJnaW46IDIwcHg7XG4gICAgICB3aWR0aDogMzAlO1xuICB9XG5cbiAgdGh7XG4gICAgY29sb3I6d2hpdGU7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JlZW47XG4gICAgZm9udC1zaXplOiAyMHB4O1xuICB9XG5cbiAgdGR7XG4gICAgZm9udC1zaXplOiAyMHB4O1xuICAgIGNvbG9yOmJsYWNrO1xuICAgICBiYWNrZ3JvdW5kLWNvbG9yOiM3OUZGODQ7XG59Il19 */"
 
 /***/ }),
 
@@ -1670,6 +1728,9 @@ let TeacherComponent = class TeacherComponent {
             this.isLoadingResults = false;
         });
     }
+    applyFilter(filterValue) {
+        this.dataSource.filter = filterValue.trim().toLowerCase();
+    }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__["MatPaginator"], { static: true }),
@@ -1695,7 +1756,7 @@ TeacherComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXIvdXNlci1kZXRhbGhlL3VzZXItZGV0YWxoZS5jb21wb25lbnQuY3NzIn0= */"
+module.exports = ".mat-form-field {\n\n    font-size: 30px;\n    width: 100%;\n\n  }\n\n  button{\n\n      margin: 20px;\n      width: 20%;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdXNlci91c2VyLWRldGFsaGUvdXNlci1kZXRhbGhlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0lBRUksZUFBZTtJQUNmLFdBQVc7O0VBRWI7O0VBRUE7O01BRUksWUFBWTtNQUNaLFVBQVU7RUFDZCIsImZpbGUiOiJzcmMvYXBwL3VzZXIvdXNlci1kZXRhbGhlL3VzZXItZGV0YWxoZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hdC1mb3JtLWZpZWxkIHtcblxuICAgIGZvbnQtc2l6ZTogMzBweDtcbiAgICB3aWR0aDogMTAwJTtcblxuICB9XG5cbiAgYnV0dG9ue1xuXG4gICAgICBtYXJnaW46IDIwcHg7XG4gICAgICB3aWR0aDogMjAlO1xuICB9Il19 */"
 
 /***/ }),
 
@@ -1998,7 +2059,7 @@ UserPutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\ntable{\n    width: 90%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdXNlci91c2VyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUNBO0lBQ0ksVUFBVTtBQUNkIiwiZmlsZSI6InNyYy9hcHAvdXNlci91c2VyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcbnRhYmxle1xuICAgIHdpZHRoOiA5MCU7XG59Il19 */"
+module.exports = ".mat-form-field {\n  font-size: 25px;\n  width: 100%;\n}\n\nbutton{\n    margin: 20px;\n    width: 30%;\n}\n\nth{\n  color:white;\n  background-color: green;\n  font-size: 20px;\n}\n\ntd{\n  font-size: 20px;\n  color:black;\n   background-color:#79FF84;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdXNlci91c2VyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0VBQ2YsV0FBVztBQUNiOztBQUVBO0lBQ0ksWUFBWTtJQUNaLFVBQVU7QUFDZDs7QUFFQTtFQUNFLFdBQVc7RUFDWCx1QkFBdUI7RUFDdkIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGVBQWU7RUFDZixXQUFXO0dBQ1Ysd0JBQXdCO0FBQzNCIiwiZmlsZSI6InNyYy9hcHAvdXNlci91c2VyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWF0LWZvcm0tZmllbGQge1xuICBmb250LXNpemU6IDI1cHg7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG5idXR0b257XG4gICAgbWFyZ2luOiAyMHB4O1xuICAgIHdpZHRoOiAzMCU7XG59XG5cbnRoe1xuICBjb2xvcjp3aGl0ZTtcbiAgYmFja2dyb3VuZC1jb2xvcjogZ3JlZW47XG4gIGZvbnQtc2l6ZTogMjBweDtcbn1cblxudGR7XG4gIGZvbnQtc2l6ZTogMjBweDtcbiAgY29sb3I6YmxhY2s7XG4gICBiYWNrZ3JvdW5kLWNvbG9yOiM3OUZGODQ7XG59Il19 */"
 
 /***/ }),
 
@@ -2039,6 +2100,9 @@ let UserComponent = class UserComponent {
             console.log(err);
             this.isLoadingResults = false;
         });
+    }
+    applyFilter(filterValue) {
+        this.dataSource.filter = filterValue.trim().toLowerCase();
     }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
