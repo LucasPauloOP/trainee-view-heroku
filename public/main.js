@@ -721,7 +721,7 @@ var Auth0Service = /** @class */ (function () {
         this.config = {
             domain: "dev-47b3881g.auth0.com",
             client_id: "L5r0l3wL8rNaFu5cHBo8koNGIDZh5kqN",
-            redirect_uri: window.location.origin + "/callback",
+            redirect_uri: "https://traineeprominas-lpop-view-sand.herokuapp.com/callback",
             audience: "sadadad" // NEW - add in the audience value
         };
     }
@@ -2451,7 +2451,7 @@ var NavbarComponent = /** @class */ (function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.auth0Client.loginWithRedirect({
-                            redirect_uri: window.location.origin + "/callback"
+                            redirect_uri: "https://traineeprominas-lpop-view-sand.herokuapp.com/callback"
                         })];
                     case 1:
                         _a.sent();
